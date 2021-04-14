@@ -1,0 +1,6 @@
+{
+  "name": "micromono",
+  "workspaces": [
+    "packages/*"
+  ]
+}
