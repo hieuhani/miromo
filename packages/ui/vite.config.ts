@@ -10,6 +10,12 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react'],
+      output: {
+        globals: (id) => id, // required for umd output
+      },
     },
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`,
   },
 });

@@ -5,7 +5,7 @@
   "module": "dist/ui.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly "
+    "build": "vite build && tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "react": "^17.0.2"
