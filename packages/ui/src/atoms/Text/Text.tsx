@@ -1,1 +1,3 @@
-export const Text: React.FunctionComponent = () => <div>Hello Text</div>;
+export const Text: React.FunctionComponent = () => {
+  return <div>Hello Text</div>;
+};
