@@ -1,4 +1,10 @@
-import { Dropdown } from '../../molecules/Dropdown';
+import {
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  DropdownLink,
+} from '../../molecules/Dropdown';
+import { Image } from '../../atoms/Image';
 
 export const SidebarLayout: React.FunctionComponent = () => {
   return (
@@ -407,45 +413,26 @@ export const SidebarLayout: React.FunctionComponent = () => {
                     <button
                       type="button"
                       className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      id="user-menu-button"
-                      aria-expanded="false"
-                      aria-haspopup="true"
                     >
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <Image
                         className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixqx=7qwKjEp7Xv&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
                       />
                     </button>
                   }
                 >
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    id="user-menu-item-0"
-                  >
-                    Your Profile
-                  </a>
-
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    id="user-menu-item-1"
-                  >
-                    Settings
-                  </a>
-
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700"
-                    role="menuitem"
-                    id="user-menu-item-2"
-                  >
-                    Sign out
-                  </a>
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <DropdownLink href="#">Your Profile</DropdownLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <DropdownLink href="#">Settings</DropdownLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <DropdownLink href="#">Sign out</DropdownLink>
+                    </DropdownItem>
+                  </DropdownMenu>
                 </Dropdown>
               </div>
             </div>
