@@ -337,10 +337,11 @@ __metadata:
     "@types/tailwindcss": ^2
     "@vitejs/plugin-react-refresh": ^1.3.2
     autoprefixer: latest
+    classnames: ^2.3.1
     history: ^5.0.0
     postcss: latest
-    react: ^17.0.2
-    react-dom: ^17.0.2
+    react: alpha
+    react-dom: alpha
     react-router-dom: next
     tailwindcss: latest
     tslib: ^2.2.0
@@ -355,7 +356,8 @@ __metadata:
   dependencies:
     "@popperjs/core": ^2.9.2
     "@types/react": ^17.0.3
-    react: ^17.0.2
+    classnames: ^2.3.1
+    react: alpha
     react-popper: ^2.2.5
     tslib: ^2.2.0
     typescript: ^4.2.4
@@ -1330,6 +1332,13 @@ __metadata:
   version: 2.0.0
   resolution: "ci-info@npm:2.0.0"
   checksum: 553fe83c085fce5e19e20f85b993f24a463e6f805803837a8868607bb68b1300567868694a5dff1beca6c54926a4c0be1cc9ef0c35f810653d590bf64183f6a0
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "classnames@npm:2.3.1"
+  checksum: 57d536edede609f81425d24b062d8d720a466565faf1e38d32c881e883920baa71519ac70c7b565e9cd39201fb1c1ff9bdf8aabf8e26544bac481e7924867c83
   languageName: node
   linkType: hard
 
@@ -3639,16 +3648,16 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17.0.2":
-  version: 17.0.2
-  resolution: "react-dom@npm:17.0.2"
+"react-dom@npm:alpha":
+  version: 18.0.0-alpha-dbe3363cc
+  resolution: "react-dom@npm:18.0.0-alpha-dbe3363cc"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-    scheduler: ^0.20.2
+    scheduler: 0.21.0-alpha-dbe3363cc
   peerDependencies:
-    react: 17.0.2
-  checksum: 960a74ff6670766846a73097a599115963df1574833c59ca0c2fd909758ebe7a6214cd14f5e6aa63ce846d8f39fde7f3b80474ccfcfadc45dd7f3246364718c6
+    react: 18.0.0-alpha-dbe3363cc
+  checksum: 04adc1f3a37894b94f0b97ebf36a19cba5e10dceb123d578a5154854c445536b516ba595e1bbb9750a620941177f0227f937f201155c63eedf26f830ba6cdf2d
   languageName: node
   linkType: hard
 
@@ -3712,13 +3721,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.2":
-  version: 17.0.2
-  resolution: "react@npm:17.0.2"
+"react@npm:alpha":
+  version: 18.0.0-alpha-dbe3363cc
+  resolution: "react@npm:18.0.0-alpha-dbe3363cc"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-  checksum: 7d0dfebafe1d297503157abb2e9acdb49852185deb8700c16f4a6faad87642f84903ab18cfc16f40b9a0dfe97540f99834982ee953e6d48b39c41608dc3e4b29
+  checksum: bb3f9084f5b9a0ab575491426ab0d4d3653e1d9b2c1fe70cc4c95e1d98d1e0f40bfaa4b3966d6952894c997e2492ea520570c81b0edf0a2931eefed2694b9085
   languageName: node
   linkType: hard
 
@@ -3926,13 +3935,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.20.2":
-  version: 0.20.2
-  resolution: "scheduler@npm:0.20.2"
+"scheduler@npm:0.21.0-alpha-dbe3363cc":
+  version: 0.21.0-alpha-dbe3363cc
+  resolution: "scheduler@npm:0.21.0-alpha-dbe3363cc"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-  checksum: 2ba121e53e8a438394598612ec9a8f465b39157042f912d2dd5956af643e0d45ec6937ae4eeb0a807d1945b209515263aed12fc3bca95c7a027ec2a54e76b399
+  checksum: 1a3fe2b727ddd177658f170f9accaee3e24cec4b301acb5b84e15e10a70e66dcae7158c14c702c12977824290d75cba4daac4ce053d3538edeaf9b2c72f9c02f
   languageName: node
   linkType: hard
 

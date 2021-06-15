@@ -2,7 +2,7 @@
     "compilerOptions": {
       "target": "ESNext",
       "lib": ["DOM", "DOM.Iterable", "ESNext"],
-      "types": ["vite/client"],
+      "types": ["vite/client", "react/next", "react-dom/next"],
       "allowJs": false,
       "skipLibCheck": false,
       "esModuleInterop": false,
@@ -22,4 +22,3 @@
     },
     "include": ["./src"]
   }
-  

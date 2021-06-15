@@ -5,6 +5,7 @@ import {
   DropdownLink,
 } from '../../molecules/Dropdown';
 import { Image } from '../../atoms/Image';
+import { Nav } from '../../molecules/Nav';
 
 export const SidebarLayout: React.FunctionComponent = () => {
   return (
@@ -198,7 +199,7 @@ export const SidebarLayout: React.FunctionComponent = () => {
               />
             </div>
             <div className="flex-1 flex flex-col overflow-y-auto">
-              <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
+              <Nav className="flex-1  bg-gray-800 ">
                 <a
                   href="#"
                   className="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
@@ -330,7 +331,7 @@ export const SidebarLayout: React.FunctionComponent = () => {
                   </svg>
                   Reports
                 </a>
-              </nav>
+              </Nav>
             </div>
           </div>
         </div>

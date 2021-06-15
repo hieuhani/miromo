@@ -4,6 +4,7 @@
     "declarationDir": "./dist",
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["react/next", "react-dom/next"],
     "allowJs": false,
     "skipLibCheck": false,
     "esModuleInterop": false,
