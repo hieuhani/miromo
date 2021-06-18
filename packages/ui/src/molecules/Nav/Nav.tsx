@@ -8,7 +8,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({
   className,
   ...props
 }) => (
-  <nav className={cx('px-2 py-4 space-y-1', className)} {...props}>
+  <nav className={cx(className)} {...props}>
     {children}
   </nav>
 );
