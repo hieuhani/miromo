@@ -24,11 +24,11 @@ export const getStyleClassname = (props: StyleProps): string => {
   spacingProps.forEach((prop) => {
     if (props[prop]) {
       if (typeof props[prop] === 'number') {
-        const sign = props[prop] < 0 ? '-' : '';
-        const value = Math.abs(props[prop]);
+        const sign = Number(props[prop]) < 0 ? '-' : '';
+        const value = Math.abs(Number(props[prop]));
         classNames.push(`${sign}${prop}-${value}`);
       } else if (Array.isArray(props[prop])) {
-        props[prop].forEach((valueItem, index) => {
+        (props[prop] as number[]).forEach((valueItem, index) => {
           if (sizes[index]) {
             const sign = valueItem < 0 ? '-' : '';
             const value = Math.abs(valueItem);

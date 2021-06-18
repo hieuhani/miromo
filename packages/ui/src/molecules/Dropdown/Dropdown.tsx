@@ -2,7 +2,7 @@ import { useState, cloneElement } from 'react';
 import { usePopper } from 'react-popper';
 
 export interface DropdownProps {
-  trigger: React.ReactNode;
+  trigger: React.ReactElement;
 }
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   trigger,
@@ -10,8 +10,10 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [referenceElement, setReferenceElement] = useState(null);
-  const [popperElement, setPopperElement] = useState(null);
-  const [arrowElement, setArrowElement] = useState(null);
+  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
+    null
+  );
+  const [arrowElement, setArrowElement] = useState<HTMLDivElement | null>(null);
   const { styles, attributes } = usePopper(referenceElement, popperElement, {
     modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
   });
