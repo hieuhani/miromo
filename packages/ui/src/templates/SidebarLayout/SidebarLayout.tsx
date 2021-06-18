@@ -9,6 +9,7 @@ import { Nav, NavLink } from '../../molecules/Nav';
 import { Drawer } from '../../organisms/Drawer';
 import { useState } from 'react';
 import { SearchForm } from '../../molecules/SearchForm';
+import { Logo } from '../../atoms/Logo';
 
 export const SidebarLayout: React.FunctionComponent = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,13 +24,7 @@ export const SidebarLayout: React.FunctionComponent = () => {
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           <div className="flex flex-col h-0 flex-1">
-            <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                alt="Workflow"
-              />
-            </div>
+            <Logo />
             <div className="flex-1 flex flex-col overflow-y-auto">
               <Nav className="flex-1 px-2 py-4 space-y-1 bg-gray-800">
                 <NavLink href="#" active>
