@@ -1,6 +1,17 @@
-export const Logo: React.FunctionComponent = () => {
+import cx from 'classnames';
+import { HTMLProps } from 'react';
+
+export interface LogoProps extends HTMLProps<HTMLDivElement> {}
+
+export const Logo: React.FunctionComponent<LogoProps> = ({
+  className,
+  ...props
+}) => {
   return (
-    <div className="flex items-center h-16 px-4 flex-shrink-0 bg-gray-900">
+    <div
+      className={cx('flex items-center h-16 flex-shrink-0', className)}
+      {...props}
+    >
       <svg
         width="36"
         height="38"
@@ -30,7 +41,7 @@ export const Logo: React.FunctionComponent = () => {
           fill="#3B3B3B"
         />
       </svg>
-      <h3 className="text-xl text-white">Capi</h3>
+      <h3 className="text-xl">Capi</h3>
     </div>
   );
 };

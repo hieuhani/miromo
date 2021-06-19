@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { SearchForm } from '../../molecules/SearchForm';
 import { Logo } from '../../atoms/Logo';
 
-export const SidebarLayout: React.FunctionComponent = () => {
+export const SidebarLayout: React.FunctionComponent = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -24,7 +24,7 @@ export const SidebarLayout: React.FunctionComponent = () => {
       <div className="hidden md:flex md:flex-shrink-0">
         <div className="flex flex-col w-64">
           <div className="flex flex-col h-0 flex-1">
-            <Logo />
+            <Logo className="bg-gray-900 text-white px-4" />
             <div className="flex-1 flex flex-col overflow-y-auto">
               <Nav className="flex-1 px-2 py-4 space-y-1 bg-gray-800">
                 <NavLink href="#" active>
@@ -149,18 +149,7 @@ export const SidebarLayout: React.FunctionComponent = () => {
         </div>
 
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
-          <div className="py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              <h1 className="text-2xl font-semibold text-gray-900">
-                Dashboard
-              </h1>
-            </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              <div className="py-4">
-                <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
-              </div>
-            </div>
-          </div>
+          {children}
         </main>
       </div>
     </div>

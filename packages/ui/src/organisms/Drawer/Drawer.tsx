@@ -39,7 +39,7 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({ onClose }) => {
           </button>
         </div>
 
-        <Logo />
+        <Logo className="bg-gray-900 text-white px-4" />
         <div className="mt-5 flex-1 h-0 overflow-y-auto">
           <Nav className="px-2 space-y-1">
             <NavLink href="#" active>
