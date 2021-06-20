@@ -8,7 +8,10 @@
     "build": "vite build && tsc --emitDeclarationOnly"
   },
   "dependencies": {
-    "react": "^17.0.2"
+    "@popperjs/core": "^2.9.2",
+    "classnames": "^2.3.1",
+    "react": "alpha",
+    "react-popper": "^2.2.5"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",
