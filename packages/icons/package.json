@@ -1,0 +1,24 @@
+{
+  "name": "@micromono/icons",
+  "version": "0.1.0",
+  "main": "dist/ui.umd.js",
+  "module": "dist/ui.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "generate": "node scripts/generate-icon-components.js"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7",
+    "@types/glob": "^7",
+    "@types/react": "^17.0.3",
+    "camelcase": "^6.2.0",
+    "cheerio": "^1.0.0-rc.10",
+    "eslint": "^7.29.0",
+    "glob": "^7.1.7",
+    "glob-promise": "^4.2.0"
+  },
+  "dependencies": {
+    "react": "alpha"
+  }
+}
