@@ -9,6 +9,8 @@ export * from './molecules/RowSelect';
 export * from './organisms/ProfileCard';
 export * from './organisms/ListView';
 export * from './organisms/Swiper';
+export * from './organisms/ActionSheet';
+export * from './organisms/Modal';
 
 export * from './templates/SidebarLayout';
 export * from './templates/SplitTwoPane';
