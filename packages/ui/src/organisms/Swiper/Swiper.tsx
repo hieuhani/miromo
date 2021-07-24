@@ -1,8 +1,13 @@
-import { CSSProperties } from 'react';
-import { SwiperItem } from './SwiperItem';
+import { CSSProperties, HTMLProps } from 'react';
+import cx from 'classnames';
 import { useWindowSize } from '../../hooks';
 
-export const Swiper: React.FunctionComponent = () => {
+export interface SwiperProps extends HTMLProps<HTMLDivElement> {}
+
+export const Swiper: React.FunctionComponent<SwiperProps> = ({
+  children,
+  className,
+}) => {
   const size = useWindowSize();
   if (!size.width) {
     return null;
@@ -18,13 +23,12 @@ export const Swiper: React.FunctionComponent = () => {
   return (
     <div
       style={style}
-      className="slider flex box-border overflow-x-scroll h-24"
+      className={cx(
+        'slider flex box-border overflow-x-scroll min-h-36',
+        className
+      )}
     >
-      <SwiperItem>Slide #1</SwiperItem>
-      <SwiperItem>Slide #2</SwiperItem>
-      <SwiperItem>Slide #3</SwiperItem>
-      <SwiperItem>Slide #4</SwiperItem>
-      <SwiperItem>Slide #5</SwiperItem>
+      {children}
     </div>
   );
 };

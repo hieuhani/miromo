@@ -1,13 +1,24 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, HTMLProps } from 'react';
+import cx from 'classnames';
 
-export const SwiperItem: React.FunctionComponent = ({ children }) => {
+export interface SwiperItemProps extends HTMLProps<HTMLAnchorElement> {
+  widthByPercent?: number;
+}
+
+export const SwiperItem: React.FunctionComponent<SwiperItemProps> = ({
+  children,
+  className,
+  widthByPercent = 100,
+}) => {
+  const widthPercent = widthByPercent / 100;
+  const width = `calc(var(--swiper-width) * ${widthPercent})`;
   const style = {
-    flex: '0 0 var(--swiper-width)',
-    width: 'var(--swiper-width)',
+    flex: `0 0 ${width}`,
+    width,
     scrollSnapAlign: 'start',
   } as CSSProperties;
   return (
-    <div style={style} className="justify-center items-center flex bg-gray-100">
+    <div style={style} className={cx('rounded-xl overflow-hidden', className)}>
       {children}
     </div>
   );
