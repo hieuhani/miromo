@@ -1,0 +1,14 @@
+{
+  "name": "@micromono/http",
+  "version": "0.1.0",
+  "main": "dist/http.umd.js",
+  "module": "dist/http.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5",
+    "vite": "^2.4.3"
+  }
+}
