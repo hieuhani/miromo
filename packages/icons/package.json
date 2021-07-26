@@ -1,8 +1,8 @@
 {
   "name": "@micromono/icons",
   "version": "0.1.0",
-  "main": "dist/ui.umd.js",
-  "module": "dist/ui.es.js",
+  "main": "dist/icons.umd.js",
+  "module": "dist/icons.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly",
@@ -16,7 +16,9 @@
     "cheerio": "^1.0.0-rc.10",
     "eslint": "^7.29.0",
     "glob": "^7.1.7",
-    "glob-promise": "^4.2.0"
+    "glob-promise": "^4.2.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.3"
   },
   "dependencies": {
     "react": "alpha"
