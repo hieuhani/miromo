@@ -4,6 +4,7 @@ export interface RowSelectProps {
   title: string;
   description?: string;
   rightText?: string;
+  onClick?: () => void;
 }
 
 export const RowSelect: React.FunctionComponent<RowSelectProps> = ({
@@ -11,10 +12,11 @@ export const RowSelect: React.FunctionComponent<RowSelectProps> = ({
   title,
   description,
   rightText,
+  onClick,
 }) => {
   return (
     <label
-      className="
+      className={cx(`
         relative
         rounded-lg
         border
@@ -31,7 +33,8 @@ export const RowSelect: React.FunctionComponent<RowSelectProps> = ({
         focus-within:ring-1
         focus-within:ring-offset-2
         focus-within:ring-indigo-500
-      "
+      `)}
+      onClick={onClick}
     >
       <div>
         <p className="font-medium text-gray-900">{title}</p>

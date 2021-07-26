@@ -1,7 +1,13 @@
 import { ReactNode, useState } from 'react';
 
+type CallbackFunction = () => void;
+
+export interface ActionSheetRenderProps {
+  toggle: CallbackFunction;
+}
+
 export interface ActionSheetProps {
-  trigger: ReactNode;
+  trigger: ReactNode | ((renderProps: ActionSheetRenderProps) => ReactNode);
 }
 
 export const ActionSheet: React.FunctionComponent<ActionSheetProps> = ({
@@ -12,6 +18,8 @@ export const ActionSheet: React.FunctionComponent<ActionSheetProps> = ({
   const toggle = () => {
     setIsPresented(!isPresented);
   };
+  const node = typeof children === 'function' ? children({ toggle }) : children;
+
   return (
     <>
       <button className="w-full" onClick={toggle}>
@@ -20,7 +28,7 @@ export const ActionSheet: React.FunctionComponent<ActionSheetProps> = ({
       {isPresented && (
         <div className="fixed inset-0 backdrop-filter backdrop-blur-sm backdrop-contrast-50 flex flex-col">
           <button className="flex-1" onClick={toggle} />
-          <div className="bg-white rounded-t-lg">{children}</div>
+          <div className="bg-white rounded-t-lg">{node}</div>
         </div>
       )}
     </>

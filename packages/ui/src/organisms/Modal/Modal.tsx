@@ -1,11 +1,10 @@
-import {
-  cloneElement,
-  isValidElement,
-  ReactNode,
-  useMemo,
-  useState,
-} from 'react';
+import { cloneElement, isValidElement, ReactNode, useState } from 'react';
 
+type CallbackFunction = () => void;
+
+export interface ModalRenderProps {
+  toggle: CallbackFunction;
+}
 export interface ModalProps {
   trigger: ReactNode;
 }
@@ -19,14 +18,13 @@ export const Modal: React.FunctionComponent<ModalProps> = ({
     setIsPresented(!isPresented);
   };
 
-  const triggerButton = useMemo(() => {
-    if (!isValidElement(trigger)) {
-      return null;
-    }
-    return cloneElement(trigger, {
+  const triggerButton =
+    isValidElement(trigger) &&
+    cloneElement(trigger, {
       onClick: toggle,
     });
-  }, []);
+
+  const node = typeof children === 'function' ? children({ toggle }) : children;
 
   return (
     <>
@@ -36,7 +34,7 @@ export const Modal: React.FunctionComponent<ModalProps> = ({
           <div className="min-h-screen flex items-center justify-center px-4">
             <div onClick={toggle} className="inset-0 absolute" />
             <div className="bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl z-10">
-              {children}
+              {node}
             </div>
           </div>
         </div>
